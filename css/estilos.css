@@ -1,0 +1,183 @@
+body{
+  background: linear-gradient(rgba(96, 24, 24, 0.98),#333 50%);
+  min-height: 100vh;
+}
+
+h1{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 45px;
+  font-family:
+  font-style: italic;
+}
+
+p{
+  color: rgb(255, 240, 240);
+}
+
+.slider{
+  /* control tamaño banner*/
+  width: 54%;
+  margin: auto;
+  /* "overflow: hidden" oculta el espacio excedente de las imagenes */
+  overflow: hidden;
+}
+
+.slider ul{
+  padding: 0;
+  /* "display: flex" pone una al lado de la otra */
+  display: flex;
+  width: 300%;
+  /* anima el slider en tiempo y direcion */
+  animation: cambio 20s infinite;
+  animation-direction: alternate;
+}
+
+.slider li{
+  width: 100%;
+  /* saca los puntos del li */
+  list-style: none;
+}
+
+.slider img{
+  width: 95%;
+}
+ /* marca la pos en tiempo de slider por tiempo*/
+@keyframes cambio {
+  0% {margin-left: 0;}
+  30% {margin-left: 0;}
+
+  35% {margin-left: -100%;}
+  60% {margin-left: -100%;}
+
+  65% {margin-left: -200%;}
+  100% {margin-left: -200%;}
+}
+
+/*----Boton----*/
+#toggle{
+  display: none;
+}
+
+#boton{
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  line-height: 200px;
+  text-align: center;
+  font-size: 70px;
+  border-radius: 50%;
+  color: #777;
+  cursor: pointer;
+  box-sizing: 0 12px 30px rgba(0, 0, 0, 0.7);
+  margin: auto;
+}
+
+#toggle:checked + #boton{
+ background: #eee;
+ box-shadow: inset 0 12px 35px rgba(0,0,0,0.5);
+ color: rgba(0,255,0,0.7);
+}
+
+/* ----- Luces -----*/
+.contenedor {
+  width: 100%;
+}
+
+.luces {
+  display: flex;
+  margin-top: 10px;
+  border-top: 1px solid #fff;
+  justify-content: center;
+}
+
+.luces img{
+  display: block;
+  margin: auto;
+  padding-top: 5px;
+  padding-right: 50px;
+}
+
+#luz {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#toggle:checked ~ .luces #luz{
+  opacity: 1;
+}
+
+/*----Imagenes---*/
+.cont{
+  display: flex;
+}
+
+.contenedor_fotos{
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  -webkit-perspective: 700;
+}
+
+.fotos{
+  height: 100%;
+  width: 100%;
+  margin: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s;
+
+}
+
+.fotos:hover{
+  transform: rotateY(180deg);
+}
+
+.lado{
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.lado img{
+  width: 100%;
+  height: 100%;
+}
+
+.frente{
+  background: crimson;
+}
+
+.atras{
+  background: rgb(170, 200, 145);
+  transform: rotateY(180deg);
+}
+
+
+/*---Contacto----*/
+footer .contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  justify-content: center;
+  padding-bottom: 25px;
+  background-color: rgb(0, 0, 0);
+}
+
+.derechos{
+  font-size: 17px;
+}
+
+.sociales{
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sociales a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 20px;
+}
